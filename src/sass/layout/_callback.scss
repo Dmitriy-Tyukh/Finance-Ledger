@@ -1,0 +1,78 @@
+.callback > .container {
+  display: flex;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.form-callback {
+  display: block;
+
+  width: 680px;
+  height: 460px;
+  padding: 80px 30px;
+  background-color: var(--callback-bg-color);
+}
+
+.callback-title {
+  font-weight: 300;
+  font-size: 38px;
+  line-height: 1.26;
+
+  margin-bottom: 34px;
+  color: var(--primary-text-color);
+}
+
+.callback-file {
+  display: block;
+  position: relative;
+  margin-bottom: 36px;
+}
+
+.callback-input {
+  width: 620px;
+  height: 40px;
+  padding: 5px;
+
+  background: var(--bg-color);
+  border: 1px solid #f5f5f5;
+  border-radius: 0px;
+  color: var(--primary-text-color);
+}
+
+.callback-label {
+  display: block;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  line-height: 1.56;
+
+  color: var(--label-text-color);
+  transition: transform 250ms var(--timing-function);
+}
+
+.callback-input:focus {
+  outline: none;
+}
+
+.callback-input:focus + .callback-label,
+.callback-input:not(:placeholder-shown) + .callback-label {
+  transform: translateY(20px);
+}
+
+.callback-btn {
+  @extend .button;
+  display: block;
+  position: absolute;
+  width: 620px;
+
+  padding-top: 7px;
+  margin-top: 24px;
+
+  line-height: 1.39;
+  text-align: center;
+
+  background-color: var(--accent-color);
+  color: var(--secondary-text-color);
+}

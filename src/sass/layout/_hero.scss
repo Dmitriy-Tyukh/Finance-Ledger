@@ -1,0 +1,46 @@
+.hero {
+  padding-top: 285px;
+  padding-bottom: 285px;
+
+  background-color: tomato;
+  text-align: center;
+
+  background-image: url(../images/Rectangle.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &-title {
+    margin-bottom: 21px;
+
+    font-weight: 300;
+    font-size: 55px;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--hero-text-color);
+  }
+
+  &-text {
+    margin-bottom: 29px;
+
+    font-size: 22px;
+    line-height: 1.67;
+    text-align: center;
+    color: var(--hero-text-color);
+  }
+  &-button {
+    position: relative;
+    @extend .button;
+    padding: 10px 30px 10px 41px;
+    background-color: var(--accent-color);
+    color: var(--secondary-text-color);
+
+    &-img {
+      position: absolute;
+      left: 27px;
+      top: 16px;
+      width: 9px;
+      height: 16px;
+    }
+  }
+}

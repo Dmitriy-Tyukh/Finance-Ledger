@@ -1,0 +1,78 @@
+.cases {
+  background-color: var(--secondary-text-color);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.cases-title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.65;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.cases-subtitle {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 38px;
+  line-height: 1.26;
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.cases-text {
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.55;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cases-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  padding-bottom: 48px;
+}
+
+.cases-items {
+  margin-right: 8px;
+  margin-bottom: 8px;
+  width: 320px;
+
+  overflow: hidden;
+  background-color: #00000060;
+}
+
+.cases-items:nth-child(4n) {
+  margin-right: 0;
+}
+.cases-items:nth-last-child(-n + 4) {
+  margin-bottom: 0;
+}
+
+.cases-link {
+  display: block;
+
+  transition: transform 500ms linear;
+}
+
+.cases-link:hover,
+.cases-link:focus {
+  transform: scale(1.1);
+}
+
+.cases-link:hover .overlay,
+.cases-link:focus .overlay {
+  opacity: 0.5;
+}
+
+.overlay {
+  background-color: black;
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
