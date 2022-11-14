@@ -1,11 +1,23 @@
-// utils
-@import './utils/modul';
+@import '~node_modules/modern-normalize/modern-normalize.css';
 
-// base
-@import './base/modul';
+@import './utils/variables';
+@import './utils/mixins';
+@import './utils/visually-hidden';
 
-// components
-@import './components/modul';
+@import './base/body';
+@import './base/reset';
 
-// layout
-@import './layout/modul';
+@import './components/container';
+@import './components/modal';
+@import './components/button';
+
+@import './layout/header';
+@import './layout/hero';
+@import './layout/features';
+@import './layout/solutions';
+@import './layout/example';
+@import './layout/cases';
+@import './layout/blog';
+@import './layout/team';
+@import './layout/callback';
+@import './layout/footer';

@@ -1,217 +1,197 @@
-.team {
-  padding: 50px 0;
-
+.team-section {
   background-color: #ffffff;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  .container {
+    padding-right: 30px;
+    padding-left: 30px;
+
+    @include tablet {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+  }
+
+  @include tablet {
+    padding-top: 48px;
+    padding-bottom: 59px;
+  }
+
+  @include desktop {
+    padding-top: 49px;
+  }
 }
 
-.title-small {
-  font-weight: 400;
-
+.team-section__top-text {
+  font-size: 20px;
+  line-height: 1.65;
   text-align: center;
+  color: #333333;
+  margin-bottom: 15px;
+
+  @include tablet {
+    margin-bottom: 16px;
+  }
 }
 
-.title-bigger {
+.team-section__title {
+  margin-left: auto;
+  margin-right: auto;
+  width: 220px;
   font-weight: 300;
   font-size: 38px;
   line-height: 1.26;
-
   text-align: center;
-
+  color: #333333;
   margin-bottom: 35px;
+
+  @include tablet {
+    width: 410px;
+    margin-bottom: 34px;
+  }
 }
 
-.description-text {
-  line-height: 1.56;
-
+.team-section__bottom-text {
+  font-size: 16px;
+  line-height: 1.6;
   text-align: center;
+  color: #333333;
+  margin-bottom: 37px;
+
+  @include tablet {
+    font-size: 17px;
+    line-height: 1.66;
+    margin-bottom: 49px;
+  }
+
+  @include desktop {
+    font-size: 18px;
+    margin-bottom: 45px;
+  }
 }
 
-.team__photo-thumb {
+.card__list {
+  @include tablet {
+    display: flex;
+  }
+}
+
+.card__item:not(:last-child) {
+  margin-bottom: 10px;
+
+  @include tablet {
+    margin-right: 20px;
+  }
+}
+
+.card__title {
+  font-size: 23px;
+  line-height: 1.25;
+  text-align: center;
+  color: #333333;
+  margin-bottom: 11px;
+
+  @include tablet {
+    font-size: 25px;
+    line-height: 1.27;
+    margin-bottom: 12px;
+  }
+}
+
+.card__bottom-text {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+  color: #333333;
+
+  @include tablet {
+    font-size: 18px;
+    line-height: 1.56;
+  }
+}
+
+.card__thumb {
   position: relative;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  margin-bottom: 14px;
+
+  @include desktop {
+    margin-bottom: 13px;
+  }
 }
 
-.team__photo-thumb:hover,
-.team__photo-thumb:focus {
-  box-shadow: 2px 2px 12px 2px rgba(0, 0, 0, 0.4);
-
-  transform: scale(1.025);
-
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.team__links--hover {
+.card__links {
   position: absolute;
+  left: 0;
+  top: 0;
+  padding: 15px 15px;
   width: 100%;
   height: 100%;
-  transform: translateY(-100%);
-
-  background-color: #00000060;
-
   opacity: 0;
 
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+  transform: translateY(100%);
+  transition: transform var(--time) var(--function-animate),
+    opacity var(--time) var(--function-animate);
 }
 
-.team__links--hover:hover,
-.team__links--hover:focus {
+.card__thumb:hover .card__links,
+.card__thumb:focus .card__links {
+  transform: translateY(0);
   opacity: 1;
 }
 
-.team__background {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.team-section__socpublic-list {
+  padding-left: 23px;
+  padding-right: 23px;
+  padding-top: 57px;
+  padding-bottom: 56px;
 
-  transform: translate(-50%, -50%);
+  @include tablet {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 35px;
+    padding-bottom: 30px;
+  }
 
-  display: flex;
-  text-align: center;
-  justify-items: center;
+  @include desktop {
+    padding-left: 102px;
+    padding-right: 110px;
+    padding-top: 130px;
+    padding-bottom: 121px;
+  }
 }
 
-.team__social-item {
-  margin-right: 25px;
-}
-
-.team__icon {
+.socpublic-list {
   display: flex;
   justify-content: center;
-
-  width: 35px;
-  height: 35px;
-
-  fill: #ffffff;
-
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.team__icon:hover,
-.team__icon:focus {
-  transform: scale(1.1);
-  
-  fill: var(--callback-bg-color);
-}
-
-.teammate-thumb {
   text-align: center;
 }
 
-.teammate-name {
-  font-weight: 400;
+.socpublic__link {
+  color: var(--secondary-text-color);
 
-  margin: 0;
-  margin-bottom: 10px;
+  transition: color var(--time) var(--function-animate);
 }
 
-.teammate-prof {
-  line-height: 1.56;
+.socpublic__link:hover,
+.socpublic__link:focus {
+  color: grey;
 }
-@media screen and (max-width: 767px) {
-  .title-small {
-    font-size: 18px;
-    line-height: 1.66;
 
-    margin-bottom: 15px;
-  }
-  .description-text {
-    font-size: 18px;
+.team-section__socpublic-item + .team-section__socpublic-item {
+  margin-left: 15px;
 
-    margin-bottom: 40px;
-  }
-  .teammate-name {
-    font-size: 23px;
-    line-height: 1.25;
-  }
-  .teammate-prof {
-    margin: 0;
-    font-size: 16px;
-      line-height: 1.6;
-  }
-  .teammate-thumb {
-    padding-top: 15px;
-    padding-bottom: 10px;
-  }
-  .team__links--hover {
-    display: none;
+  @include desktop {
+    margin-left: 25px;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1359px) {
-    .title-small {
-      font-size: 20px;
-      line-height: 1.65;
-      
-      margin-bottom: 15px;
-    }
-
-    .description-text {
-      font-size: 17px;
-      line-height: 1.66;
-
-      margin-bottom: 50px;
-    }
-
-    .team__list {
-      display: flex;
-      justify-content: space-between;
-    }
-  
-    .teammate-name {
-      font-size: 25px;
-      line-height: 1.27;
-    }
-  
-    .teammate-prof {
-      font-size: 18px;
-      line-height: 1.56;
-
-      margin: 0;
-    }
-  
-    .teammate-thumb {
-      padding-top: 15px;
-      padding-bottom: 10px;
-    }
-  
-    .team__links--hover {
-      display: none;
-    }
-}
-
-@media screen and (min-width: 1360px) {
-  .title-small {
-    font-size: 20px;
-    line-height: 1.65;
-  }
-
-  .description-text {
-  font-size: 18px;
-  line-height: 1.56;
-
-  margin-bottom: 45px;
-  }
-
-  .team__list {
-    display: flex;
-    justify-content: space-between;
-  }
-  .teammate-thumb {
-    padding-top: 15px;
-    padding-bottom: 10px;
-  }
-  .teammate-name {
-    font-size: 25px;
-    line-height: 1.27;
-
-    margin-bottom: 10px;
-  }
-  .teammate-prof {
-    font-size: 18px;
-    line-height: 1.56;
-
-    margin: 0;
-  }
+.socpublic__icon {
+  fill: currentColor;
+  display: block;
 }
